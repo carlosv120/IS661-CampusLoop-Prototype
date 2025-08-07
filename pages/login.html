@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CampusLoop Login</title>
     <link rel="stylesheet" href="../css/login.css" />
-    <link rel="stylesheet" href="../css/landing.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="icon" type="image/png" href="../images/icon.png" />
 </head>
 
 <body>
     <div class="container">
-        <h1>CampusLoop</h1>
+        <div class="logo-title">
+            <img src="../images/icon.png" alt="CampusLoop Icon" class="logo-img" />
+            <h1>CampusLoop</h1>
+        </div>
         <input type="text" placeholder="Email or Username" id="username" />
         <input type="password" placeholder="Password" id="password" />
         <div class="checkbox">
@@ -21,7 +25,7 @@
         <button id="loginBtn">Login</button>
         <div class="signup">
             Don’t have an account?
-            <a href="#" id="openSignupLink">Sign up instead</a>
+            <a href="#" onclick="event.preventDefault(); openModal();">Sign up instead</a>
         </div>
     </div>
 
@@ -33,6 +37,16 @@
             <span class="close" onclick="closeModal()">&times;</span>
         </div>
     </div>
+
+    <!-- Validation Modal -->
+    <div id="validationModal" class="modal">
+        <div class="modal-content">
+            <h2>Please enter your credentials</h2>
+            <button onclick="window.location.href='forgot-password.html'">Forgot your password?</button>
+            <span class="close" onclick="closeValidationModal()">&times;</span>
+        </div>
+    </div>
+
 
     <script src="../js/login.js"></script>
 </body>

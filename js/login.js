@@ -1,47 +1,49 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const loginBtn = document.getElementById("loginBtn");
-    const signupLink = document.getElementById("openSignupLink");
+// Show validation modal
+function openValidationModal() {
+    const modal = document.getElementById('validationModal');
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+}
 
-    if (loginBtn) {
-        loginBtn.addEventListener("click", function () {
-            const user = document.getElementById("username").value;
-            const pass = document.getElementById("password").value;
+function closeValidationModal() {
+    const modal = document.getElementById('validationModal');
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+}
 
-            if (!user || !pass) {
-                alert("Please enter both username and password.");
-            } else {
-                alert("Logging in...");
-            }
-        });
-    }
+// Show role modal
+function openModal() {
+    const modal = document.getElementById('roleModal');
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+}
 
-    if (signupLink) {
-        signupLink.addEventListener("click", function (e) {
-            e.preventDefault(); // ✅ always stop the default '#' behavior
+function closeModal() {
+    const modal = document.getElementById('roleModal');
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+}
 
-            const modal = document.getElementById("roleModal");
-            if (modal) {
-                modal.classList.add("show");
-                document.body.classList.add("modal-open");
-            } else {
-                console.warn("Modal not found");
-            }
-        });
-    }
+// Attach to Login button
+document.getElementById('loginBtn').addEventListener('click', function () {
+    const user = document.getElementById('username').value.trim();
+    const pass = document.getElementById('password').value.trim();
 
-    const modal = document.getElementById("roleModal");
-
-    if (modal) {
-        window.onclick = function (event) {
-            if (event.target === modal) {
-                modal.classList.remove("show");
-                document.body.classList.remove("modal-open");
-            }
-        };
-
-        window.closeModal = function () {
-            modal.classList.remove("show");
-            document.body.classList.remove("modal-open");
-        };
+    if (user === '' || pass === '') {
+        openValidationModal();
+    } else {
+        alert('Logging in...'); // Simulate real login here
     }
 });
+
+// Allow outside click to close modals
+window.onclick = function (event) {
+    const validationModal = document.getElementById('validationModal');
+    const roleModal = document.getElementById('roleModal');
+
+    if (event.target === validationModal) {
+        closeValidationModal();
+    } else if (event.target === roleModal) {
+        closeModal();
+    }
+};

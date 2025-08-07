@@ -5,28 +5,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CampusLoop</title>
-    <link rel="stylesheet" href="../css/landing.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+    <link rel="icon" type="image/png" href="images/icon.png" />
 </head>
 
 <body>
     <div class="left-image-container">
-        <img src="../images/left.png" alt="Campus Events" />
+        <img src="images/left.png" alt="Campus Events" />
     </div>
 
     <div class="main-content">
         <div class="landing-container">
-            <h1>Welcome to CampusLoop</h1>
+            <div class="logo-title">
+                <img src="images/icon.png" alt="CampusLoop Icon" class="logo-img" />
+                <h1>Welcome to CampusLoop</h1>
+            </div>
             <p>Discover and create amazing campus events with ease.</p>
             <div class="buttons">
                 <a href="pages/login.html" class="btn">Login</a>
-                <a href="#" class="btn outline" onclick="openModal()">Sign Up</a>
+                <a href="#" class="btn outline" onclick="event.preventDefault(); openModal();">Sign Up</a>
             </div>
         </div>
     </div>
 
     <div id="modal-container"></div>
-    <script src="../js/landing.js"></script>
-    <script src="../js/auto-open-modal.js"></script>
+    <script src="js/landing.js"></script>
+    <script src="js/auto-open-modal.js"></script>
 </body>
 
 </html>
