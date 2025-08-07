@@ -1,49 +1,61 @@
-// Show validation modal
+// ── helpers for each modal ─────────────────────────────
 function openValidationModal() {
-    const modal = document.getElementById('validationModal');
-    modal.classList.add('show');
-    document.body.classList.add('modal-open');
+    document.getElementById("validationModal").classList.add("show");
+    document.body.classList.add("modal-open");
 }
-
 function closeValidationModal() {
-    const modal = document.getElementById('validationModal');
-    modal.classList.remove('show');
-    document.body.classList.remove('modal-open');
+    document.getElementById("validationModal").classList.remove("show");
+    document.body.classList.remove("modal-open");
 }
 
-// Show role modal
-function openModal() {
-    const modal = document.getElementById('roleModal');
-    modal.classList.add('show');
-    document.body.classList.add('modal-open');
+function openInvalidModal() {
+    document.getElementById("invalidModal").classList.add("show");
+    document.body.classList.add("modal-open");
+}
+function closeInvalidModal() {
+    document.getElementById("invalidModal").classList.remove("show");
+    document.body.classList.remove("modal-open");
 }
 
+function openModal() {               // role-select
+    document.getElementById("roleModal").classList.add("show");
+    document.body.classList.add("modal-open");
+}
 function closeModal() {
-    const modal = document.getElementById('roleModal');
-    modal.classList.remove('show');
-    document.body.classList.remove('modal-open');
+    document.getElementById("roleModal").classList.remove("show");
+    document.body.classList.remove("modal-open");
 }
 
-// Attach to Login button
-document.getElementById('loginBtn').addEventListener('click', function () {
-    const user = document.getElementById('username').value.trim();
-    const pass = document.getElementById('password').value.trim();
+// ── login button logic ─────────────────────────────────
+document.getElementById("loginBtn").addEventListener("click", () => {
+    const user = document.getElementById("username").value.trim().toLowerCase();
+    const pass = document.getElementById("password").value.trim();
 
-    if (user === '' || pass === '') {
+    // 1) empty fields → validation modal
+    if (user === "" || pass === "") {
         openValidationModal();
-    } else {
-        alert('Logging in...'); // Simulate real login here
+        return;
     }
+
+    // 2) student credentials
+    if (user === "student@njit.edu" && pass === "student") {
+        window.location.href = "../pages/home-student.html";
+        return;
+    }
+
+    // 3) creator credentials
+    if (user === "creator@gmail.com" && pass === "creator") {
+        window.location.href = "../pages/home-creator.html";
+        return;
+    }
+
+    // 4) otherwise → invalid credentials modal
+    openInvalidModal();
 });
 
-// Allow outside click to close modals
-window.onclick = function (event) {
-    const validationModal = document.getElementById('validationModal');
-    const roleModal = document.getElementById('roleModal');
-
-    if (event.target === validationModal) {
-        closeValidationModal();
-    } else if (event.target === roleModal) {
-        closeModal();
-    }
-};
+// ── click outside any modal closes it ──────────────────
+window.addEventListener("click", (e) => {
+    if (e.target.id === "roleModal") closeModal();
+    if (e.target.id === "validationModal") closeValidationModal();
+    if (e.target.id === "invalidModal") closeInvalidModal();
+});

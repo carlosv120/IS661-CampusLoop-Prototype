@@ -20,7 +20,11 @@
 
         <input type="text" id="username" placeholder="Email or Username" />
         <input type="password" id="password" placeholder="Password" />
-
+        <p class="test-note">
+            <em>Testing accounts:<br>
+                Student — <strong>student@njit.edu / student</strong><br>
+                Creator — <strong>creator@gmail.com / creator</strong></em>
+        </p>
         <div class="checkbox">
             <input type="checkbox" id="rememberMe" />
             <label for="rememberMe">Remember Me</label>
@@ -34,7 +38,7 @@
         </div>
     </div>
 
-    <!-- Validation Modal (unchanged) -->
+    <!-- Validation Modal -->
     <div id="validationModal" class="modal">
         <div class="modal-content">
             <h2>Please enter your credentials</h2>
@@ -45,6 +49,16 @@
         </div>
     </div>
 
+    <!-- Invalid-credentials Modal -->
+    <div id="invalidModal" class="modal">
+        <div class="modal-content">
+            <h2>Incorrect username or password</h2>
+            <button onclick="closeInvalidModal()">Try again</button>
+            <span class="close" onclick="closeInvalidModal()">&times;</span>
+        </div>
+    </div>
+
+    <!-- Role-select modal injected here -->
     <div id="modal-container"></div>
 
     <script src="../js/login.js"></script>

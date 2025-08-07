@@ -86,3 +86,12 @@ button {
     margin-top: -30px;
     margin-bottom: -40px;
 }
+
+/* ...existing login.css rules remain unchanged... */
+
+/* light grey sub-note for test accounts */
+.test-note {
+    font-size: 0.85rem;
+    color: #6b6b6b;
+    margin: 12px 0;
+}
