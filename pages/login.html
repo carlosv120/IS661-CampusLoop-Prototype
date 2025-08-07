@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CampusLoop Login</title>
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/landing.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>CampusLoop</h1>
+        <input type="text" placeholder="Email or Username" id="username" />
+        <input type="password" placeholder="Password" id="password" />
+        <div class="checkbox">
+            <input type="checkbox" id="rememberMe" />
+            <label for="rememberMe">Remember Me</label>
+        </div>
+        <button id="loginBtn">Login</button>
+        <div class="signup">
+            Don’t have an account?
+            <a href="#" id="openSignupLink">Sign up instead</a>
+        </div>
+    </div>
+
+    <div id="roleModal" class="modal">
+        <div class="modal-content">
+            <h2>Choose your role</h2>
+            <button onclick="window.location.href='signup-student.html'">Student</button>
+            <button onclick="window.location.href='signup-creator.html'">Event Creator</button>
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
