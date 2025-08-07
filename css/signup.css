@@ -1,6 +1,6 @@
 body {
     font-family: "Segoe UI", sans-serif;
-    background-color: #f9f9f9;
+    background: linear-gradient(to top right, #0047ab, #6ea8fe);
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,58 +9,62 @@ body {
     height: 100vh;
 }
 
-.container {
+.form-container {
     width: 100%;
-    max-width: 375px;
-    padding: 24px;
+    max-width: 400px;
     background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 32px;
     border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
     color: #0047ab;
     margin-bottom: 24px;
 }
 
-input[type="text"],
-input[type="password"] {
+form input {
+    display: block;
     width: 100%;
     padding: 12px;
     margin-bottom: 16px;
-    border: 1px solid #ccc;
     border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
     font-size: 16px;
 }
 
-.checkbox {
-    margin-bottom: 16px;
-    font-size: 14px;
-}
-
-button {
+form button {
     width: 100%;
+    padding: 14px;
     background-color: #0047ab;
     color: white;
-    padding: 14px;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
 }
 
-.signup {
-    margin-top: 16px;
-    text-align: center;
+p a {
+    color: #0047ab;
+    text-decoration: none;
     font-size: 14px;
 }
 
-.signup a {
-    color: #0047ab;
-    text-decoration: none;
+p a:hover {
+    text-decoration: underline;
 }
 
-.signup a:hover {
-    text-decoration: underline;
+.logo-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-img {
+    width: 150px;
+    height: auto;
+    margin-top: -30px;
+    margin-bottom: -40px;
 }

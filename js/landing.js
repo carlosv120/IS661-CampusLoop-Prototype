@@ -21,8 +21,6 @@ window.onclick = function (event) {
     }
 };
 
-// ✅ Fixed path: index.html is in root, modal.html is in pages/
-// ✅ Corrected fetch path
 fetch('../pages/modal.html')
     .then(response => response.text())
     .then(html => {
