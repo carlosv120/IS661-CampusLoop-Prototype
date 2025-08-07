@@ -5,9 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CampusLoop Login</title>
+
     <link rel="stylesheet" href="../css/login.css" />
     <link rel="stylesheet" href="../css/common.css" />
-    <link rel="icon" type="image/png" href="../images/icon.png" />
+    <link rel="icon" href="../images/icon.png" type="image/png" />
 </head>
 
 <body>
@@ -16,39 +17,38 @@
             <img src="../images/icon.png" alt="CampusLoop Icon" class="logo-img" />
             <h1>CampusLoop</h1>
         </div>
-        <input type="text" placeholder="Email or Username" id="username" />
-        <input type="password" placeholder="Password" id="password" />
+
+        <input type="text" id="username" placeholder="Email or Username" />
+        <input type="password" id="password" placeholder="Password" />
+
         <div class="checkbox">
             <input type="checkbox" id="rememberMe" />
             <label for="rememberMe">Remember Me</label>
         </div>
+
         <button id="loginBtn">Login</button>
+
         <div class="signup">
             Don’t have an account?
             <a href="#" onclick="event.preventDefault(); openModal();">Sign up instead</a>
         </div>
     </div>
 
-    <div id="roleModal" class="modal">
-        <div class="modal-content">
-            <h2>Choose your role</h2>
-            <button onclick="window.location.href='signup-student.html'">Student</button>
-            <button onclick="window.location.href='signup-creator.html'">Event Creator</button>
-            <span class="close" onclick="closeModal()">&times;</span>
-        </div>
-    </div>
-
-    <!-- Validation Modal -->
+    <!-- Validation Modal (unchanged) -->
     <div id="validationModal" class="modal">
         <div class="modal-content">
             <h2>Please enter your credentials</h2>
-            <button onclick="window.location.href='forgot-password.html'">Forgot your password?</button>
+            <button onclick="window.location.href='forgot-password.html'">
+                Forgot your password?
+            </button>
             <span class="close" onclick="closeValidationModal()">&times;</span>
         </div>
     </div>
 
+    <div id="modal-container"></div>
 
     <script src="../js/login.js"></script>
+    <script src="../js/auto-open-modal.js"></script>
 </body>
 
 </html>
