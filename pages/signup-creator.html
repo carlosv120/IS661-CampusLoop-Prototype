@@ -7,6 +7,25 @@
     <title>Sign Up - Event Creator</title>
     <link rel="stylesheet" href="../css/signup.css" />
     <link rel="icon" type="image/png" href="../images/icon.png" />
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form > div {
+            margin-bottom: 15px;
+        }
+
+        input,
+        button {
+            min-width: 300px;
+            max-width: 90vw;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,17 +34,24 @@
             <img src="../images/icon.png" alt="CampusLoop Icon" class="logo-img" />
             <h1>Event Creator Sign Up</h1>
         </div>
-        <form>
-            <input type="text" placeholder="Full Name" required />
-            <input type="email" placeholder="Email Address" required />
-            <input type="text" placeholder="Organization Name" required />
-            <input type="text" placeholder="Role or Title" required />
-            <input type="password" placeholder="Password" required />
-            <input type="password" placeholder="Confirm Password" required />
-            <button type="submit">Create Account</button>
+        <form id="signupForm">
+            <div><input type="text" placeholder="Full Name" required /></div>
+            <div><input type="email" placeholder="Email Address" required /></div>
+            <div><input type="text" placeholder="Organization Name" required /></div>
+            <div><input type="text" placeholder="Role or Title" required /></div>
+            <div><input type="password" placeholder="Password" required /></div>
+            <div><input type="password" placeholder="Confirm Password" required /></div>
+            <div><button type="submit">Create Account</button></div>
         </form>
         <p><a href="login.html">Back to Login</a></p>
     </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // prevent normal form submission
+            window.location.href = 'home-creator.html'; // redirect to new page
+        });
+    </script>
 </body>
 
 </html>
