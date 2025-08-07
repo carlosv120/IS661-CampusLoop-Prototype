@@ -55,3 +55,16 @@ p a {
 p a:hover {
     text-decoration: underline;
 }
+
+.logo-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-img {
+    width: 150px;
+    height: auto;
+    margin-top: -30px;
+    margin-bottom: -40px;
+}
