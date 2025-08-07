@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create New Event – CampusLoop</title>
+    <link rel="stylesheet" href="../css/create-event.css" />
+    <link rel="icon" href="../images/icon.png" type="image/png" />
+</head>
+
+<body>
+    <!-- ─ Sidebar ─ -->
+    <div class="sidebar">
+        <h2>Creator Menu</h2>
+        <a href="home-creator.html">Dashboard</a>
+        <a href="create-event.html" class="active">Create Event</a>
+        <a href="#">My Events</a>
+        <a href="../index.html">Logout</a>
+    </div>
+
+    <!-- ─ Main content ─ -->
+    <div class="main">
+        <div class="card">
+            <h3>Create New Event</h3>
+            <form id="eventForm">
+                <input type="text" placeholder="Event Title" required>
+                <input type="date" required>
+                <input type="text" placeholder="Venue" required>
+                <select required>
+                    <option value="">Visibility (Private/Public)</option>
+                    <option value="Private">Private</option>
+                    <option value="Public">Public</option>
+                </select>
+                <textarea placeholder="Description" rows="4" required></textarea>
+                <input type="text" placeholder="Tags (comma separated)">
+                <input type="text" placeholder="Category">
+                <input type="number" placeholder="Capacity / Attendance">
+                <input type="number" placeholder="Cost">
+                <input type="date" placeholder="RSVP Deadline">
+                <input type="file" accept="image/*">
+                <button type="submit">Save Event</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('eventForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Event Created Successfully!');
+            window.location.href = 'home-creator.html';
+        });
+    </script>
+</body>
+
+</html>
