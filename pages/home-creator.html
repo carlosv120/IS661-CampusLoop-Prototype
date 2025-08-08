@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <!-- ─ Sidebar ─ -->
+    <!-- Sidebar -->
     <div class="sidebar">
         <h2>Creator Menu</h2>
         <a href="#">Dashboard</a>
@@ -20,7 +20,7 @@
         <a href="../index.html">Logout</a>
     </div>
 
-    <!-- ─ Main content ─ -->
+    <!-- Main content -->
     <div class="main">
         <div class="card">
             <h3>Welcome, Event Creator!</h3>
@@ -28,12 +28,10 @@
             <button onclick="window.location.href='create-event.html'">Create Event</button>
         </div>
 
-
         <div class="card">
             <h3>Your Events</h3>
             <div id="creatorEventsList"></div>
         </div>
-
 
         <div class="card">
             <h3>Your Past Events</h3>
@@ -41,10 +39,23 @@
         </div>
     </div>
 
-    <script src="../js/creator-past-events.js"></script>
-    <script src="../js/creator-events.js"></script>
-    <script src="../js/storage.js"></script>
+    <!-- Delete confirmation modal -->
+    <div id="deleteModal" class="cl-modal-overlay" aria-hidden="true">
+        <div class="cl-modal" role="dialog" aria-modal="true" aria-labelledby="delTitle">
+            <h4 id="delTitle" class="cl-modal-title">Delete event</h4>
+            <p class="cl-modal-text">Are you sure you want to delete this event?</p>
+            <div class="cl-modal-actions">
+                <button type="button" id="cancelDeleteBtn" class="cl-btn cl-btn-secondary">Cancel</button>
+                <button type="button" id="confirmDeleteBtn" class="cl-btn cl-btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
 
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/creator-events.js"></script>
+    <script src="../js/creator-past-events.js"></script>
 </body>
 
 </html>

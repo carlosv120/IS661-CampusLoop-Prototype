@@ -1,141 +1,168 @@
-/* Match home.css look & feel */
+/* Base layout (matches other pages) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
     display: flex;
     height: 100vh;
     background: linear-gradient(to bottom right, #e6f0ff, #ffffff);
-  }
-  
-  /* ─────────── Sidebar (same as home.css) ─────────── */
-  .sidebar {
+}
+
+.sidebar {
     width: 220px;
     background-color: #0047ab;
     color: #ffffff;
     display: flex;
     flex-direction: column;
     padding: 24px 0;
-  }
-  
-  .sidebar h2 {
+}
+
+.sidebar h2 {
     text-align: center;
     margin: 0 0 24px 0;
     font-size: 22px;
-  }
-  
-  .sidebar a {
+}
+
+.sidebar a {
     color: #ffffff;
     padding: 12px 24px;
     text-decoration: none;
     display: block;
     font-size: 16px;
-  }
-  
-  .sidebar a:hover {
+}
+
+.sidebar a:hover {
     background-color: rgba(255, 255, 255, 0.15);
-  }
-  
-  .sidebar a.active {
-    background-color: rgba(255, 255, 255, 0.22);
-  }
-  
-  /* ─────────── Main / Card (same as home.css) ─────────── */
-  .main {
+}
+
+.main {
     flex: 1;
     padding: 32px;
     overflow-y: auto;
-  }
-  
-  .card {
+}
+
+.card {
     background-color: #ffffff;
     border-radius: 12px;
     padding: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
     margin-bottom: 24px;
-    max-width: 720px;
-  }
-  
-  .card h3 {
+}
+
+.card h3 {
     margin-top: 0;
     color: #0047ab;
-  }
-  
-  /* ─────────── Form styling (harmonized with cards) ─────────── */
-  form {
+}
+
+/* ---- Form layout: labels left, fields same width ---- */
+.event-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-  }
-  
-  .form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    max-width: 640px;      /* keeps fields reasonable on large screens */
-  }
-  
-  .form-row label {
-    font-size: 14px;
-    color: #294263;
-  }
-  
-  input,
-  select,
-  textarea {
-    padding: 12px 14px;
-    font-size: 14px;
-    border: 1px solid #d6dbe6;
-    border-radius: 10px;    /* rounded like your diagram */
-    background: #fff;
-    box-sizing: border-box;
-    min-width: 300px;       /* start width */
-    width: 100%;
-    max-width: 100%;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  }
-  
-  input:focus,
-  select:focus,
-  textarea:focus {
-    outline: none;
-    border-color: #0047ab;
-    box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.12);
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  /* Actions */
-  .actions {
-    display: flex;
+    gap: 14px;
+    max-width: 820px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    /* label | field */
+    align-items: center;
     gap: 12px;
+}
+
+.form-row label {
+    font-weight: 700;
+    color: #0047ab;
+}
+
+/* Ensure all controls share the exact same width & height */
+.form-row input,
+.form-row select,
+.form-row textarea,
+.input-prefix {
+    /* wrapper must also fill */
+    width: 100%;
+}
+
+.form-row input,
+.form-row select {
+    height: 44px;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    padding: 12px 14px;
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #fff;
+    outline: none;
+}
+
+/* Textarea */
+.form-row textarea {
+    min-height: 96px;
+    resize: vertical;
+}
+
+/* Remove native number spinners (in case number type is used anywhere) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+/* $ prefix for cost */
+.input-prefix {
+    position: relative;
+}
+
+.input-prefix .prefix {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #57606a;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.input-prefix input {
+    padding-left: 30px;
+}
+
+/* Submit row button */
+.submit-row {
     margin-top: 8px;
-  }
-  
-  button {
+}
+
+button[type="submit"] {
+    justify-self: start;
+    width: max-content;
     padding: 12px 18px;
     font-size: 15px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-  }
-  
-  .btn-primary {
-    background: #0047ab;
-    color: #ffffff;
-  }
-  
-  .btn-primary:hover {
-    filter: brightness(0.95);
-  }
-  
-  .btn-secondary {
-    background: #eef2fb;
-    color: #294263;
-  }
-  
-  .btn-secondary:hover {
-    filter: brightness(0.97);
-  }
-  
+    background-color: #0047ab;
+    color: #fff;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row label {
+        margin-bottom: 4px;
+    }
+}
