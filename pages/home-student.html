@@ -14,24 +14,55 @@
     <!-- ─ Sidebar ─ -->
     <div class="sidebar">
         <h2>Student Menu</h2>
-        <a href="#">Dashboard</a>
+        <a href="#" class="active">Dashboard</a>
         <a href="#">My Events</a>
         <a href="#">Settings</a>
         <a href="../index.html">Logout</a>
     </div>
 
     <!-- ─ Main content ─ -->
-    <div class="main">
-        <div class="card">
-            <h3>Welcome, Student!</h3>
-            <p>Here you can browse campus events, RSVP, and manage your profile.</p>
-        </div>
+    <div class="main student-events">
+        <!-- Profile / Welcome -->
+        <div class="card" id="studentProfileCard"></div>
 
+        <!-- Upcoming Events -->
         <div class="card">
             <h3>Upcoming Events</h3>
-            <p>(Placeholder list for upcoming events…)</p>
+            <div id="studentUpcomingList"></div>
+        </div>
+
+        <!-- Events Near Me -->
+        <div class="card">
+            <h3>Events Near Me</h3>
+            <div id="studentNearMeList"></div>
+        </div>
+
+        <!-- Events You Might Be Interested In -->
+        <div class="card">
+            <h3>Events You Might Like</h3>
+            <div id="studentForYouList"></div>
+        </div>
+
+        <!-- Because your preferred language is Spanish -->
+        <div class="card">
+            <h3>Porque prefieres español, estos eventos podrían interesarte</h3>
+            <div id="studentSpanishList"></div>
+        </div>
+
+        <!-- Trending on Campus -->
+        <div class="card">
+            <h3>Trending on Campus</h3>
+            <div id="studentTrendingList"></div>
+        </div>
+
+        <!-- Free Food & Swag -->
+        <div class="card">
+            <h3>Free Food &amp; Swag</h3>
+            <div id="studentFreebiesList"></div>
         </div>
     </div>
+
+    <script src="../js/student-events.js"></script>
 </body>
 
 </html>
