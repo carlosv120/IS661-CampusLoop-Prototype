@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CampusLoop Login</title>
 
-    <link rel="stylesheet" href="../css/login.css" />
+    <!-- Load shared styles FIRST so login.css can override them -->
     <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/login.css" />
     <link rel="icon" href="../images/icon.png" type="image/png" />
 </head>
 
@@ -20,18 +21,19 @@
 
         <input type="text" id="username" placeholder="Email or Username" />
         <input type="password" id="password" placeholder="Password" />
+
         <p class="test-note">
             <em>Testing accounts:<br>
                 Student — <strong>student@njit.edu / student</strong><br>
                 Event Creator — <strong>creator@gmail.com / creator</strong></em>
         </p>
+
         <div class="checkbox">
             <input type="checkbox" id="rememberMe" />
             <label for="rememberMe">Remember Me</label>
         </div>
 
-        <button id="loginBtn">Login</button>
-
+        <button id="loginBtn" type="button">Login</button>
         <div class="signup">
             Don’t have an account?
             <a href="#" onclick="event.preventDefault(); openModal();">Sign up instead</a>
@@ -42,9 +44,7 @@
     <div id="validationModal" class="modal">
         <div class="modal-content">
             <h2>Please enter your credentials</h2>
-            <button onclick="window.location.href='forgot-password.html'">
-                Forgot your password?
-            </button>
+            <button onclick="window.location.href='forgot-password.html'">Forgot your password?</button>
             <span class="close" onclick="closeValidationModal()">&times;</span>
         </div>
     </div>
