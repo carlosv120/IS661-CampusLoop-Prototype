@@ -1,55 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Event Statistics</title>
     <link rel="stylesheet" href="../css/event-stats.css" />
-    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="icon" href="../images/icon.png" type="image/png" />
 </head>
+
 <body>
-    <!-- ─ Sidebar ─ -->
+    <!-- Sidebar -->
     <div class="sidebar">
         <h2>Creator Menu</h2>
         <a href="home-creator.html">Dashboard</a>
-        <a href="create-event.html" class="active">Create Event</a>
-        <a href="#">My Events</a>
+        <a href="create-event.html">Create Event</a>
+        <a href="event-stats.html" class="active">Event Stats</a>
         <a href="../index.html">Logout</a>
     </div>
 
-    <!-- ─ Metrics ─ -->
+    <!-- Container -->
     <div class="container">
         <h1 class="title">Event Statistics</h1>
-        <h2 class="h2title">Event Name - Event Date</h2>
-        <p>Event Description</p>
 
-        
+        <!-- Overview -->
+        <h2>Overview</h2>
         <div class="metrics">
             <div class="card">
-                <h5 class="card-title">Event Views</h5>
-                <p class="card-value">1,200</p>
+                <div class="card-title">Total Views</div>
+                <div class="card-value">6,250</div>
             </div>
             <div class="card">
-                <h5 class="card-title">Total RSVPs</h5>
-                <p class="card-value">300</p>
+                <div class="card-title">Total RSVPs</div>
+                <div class="card-value">1,040</div>
             </div>
             <div class="card">
-                <h5 class="card-title">Conversion Rate</h5>
-                <p class="card-value">25%</p>
+                <div class="card-title">Attendance Rate</div>
+                <div class="card-value">72%</div>
             </div>
             <div class="card">
-                <h5 class="card-title">Total Events</h5>
-                <p class="card-value">25</p>
+                <div class="card-title">Total Events</div>
+                <div class="card-value">18</div>
             </div>
             <div class="card">
-                <h5 class="card-title">Total Attendees</h5>
-                <p class="card-value">120</p>
+                <div class="card-title">Total Attendees</div>
+                <div class="card-value">750</div>
             </div>
             <div class="card">
-                <h5 class="card-title">Saves</h5>
-                <p class="card-value">45</p>
+                <div class="card-title">Saves</div>
+                <div class="card-value">215</div>
+            </div>
+            <!-- New 4 metrics -->
+            <div class="card">
+                <div class="card-title">Avg RSVPs/Event</div>
+                <div class="card-value">58</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Avg Views/Event</div>
+                <div class="card-value">347</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Highest Attendance</div>
+                <div class="card-value">320</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Lowest Attendance</div>
+                <div class="card-value">45</div>
             </div>
         </div>
+
+        <!-- Your Events -->
+        <h2 class="section-title">Your Events</h2>
+        <div class="your-events">
+            <div class="event-card">
+                <h3>Campus Club Fair • 10/03/2025</h3>
+                <p>Meet student orgs, grab swag, and sign up for clubs.</p>
+                <div class="event-stats">
+                    <div class="stat"><span>Views</span><strong>1200</strong></div>
+                    <div class="stat"><span>RSVPs</span><strong>300</strong></div>
+                    <div class="stat"><span>Attendees</span><strong>220</strong></div>
+                    <div class="stat"><span>Rate</span><strong>73%</strong></div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <h3>Local Bites Pop Up • 10/10/2025</h3>
+                <p>Food trucks and samples from local restaurants.</p>
+                <div class="event-stats">
+                    <div class="stat"><span>Views</span><strong>980</strong></div>
+                    <div class="stat"><span>RSVPs</span><strong>180</strong></div>
+                    <div class="stat"><span>Attendees</span><strong>140</strong></div>
+                    <div class="stat"><span>Rate</span><strong>78%</strong></div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <h3>Study Jam with the Library • 10/15/2025</h3>
+                <p>Group study session with coffee and tutoring drop ins.</p>
+                <div class="event-stats">
+                    <div class="stat"><span>Views</span><strong>620</strong></div>
+                    <div class="stat"><span>RSVPs</span><strong>80</strong></div>
+                    <div class="stat"><span>Attendees</span><strong>65</strong></div>
+                    <div class="stat"><span>Rate</span><strong>81%</strong></div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <h3>Open Mic Night • 10/18/2025</h3>
+                <p>Poetry, comedy, and live music. Sign ups at the door.</p>
+                <div class="event-stats">
+                    <div class="stat"><span>Views</span><strong>1450</strong></div>
+                    <div class="stat"><span>RSVPs</span><strong>260</strong></div>
+                    <div class="stat"><span>Attendees</span><strong>180</strong></div>
+                    <div class="stat"><span>Rate</span><strong>69%</strong></div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <h3>Esports Tournament • 10/25/2025 to 10/26/2025</h3>
+                <p>Two day bracket with prizes for the top teams.</p>
+                <div class="event-stats">
+                    <div class="stat"><span>Views</span><strong>800</strong></div>
+                    <div class="stat"><span>RSVPs</span><strong>150</strong></div>
+                    <div class="stat"><span>Attendees</span><strong>110</strong></div>
+                    <div class="stat"><span>Rate</span><strong>73%</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Your Past Events</h2>
+        <div class="your-events">
+            <div class="event-card">
+                <h3>Charity Fun Run • 02/10/2025</h3>
+                <p>A community 5K run to raise funds for local charities.</p>
+                <div class="event-stats">
+                    <div class="stat"><span>Views</span><strong>640</strong></div>
+                    <div class="stat"><span>RSVPs</span><strong>100</strong></div>
+                    <div class="stat"><span>Attendees</span><strong>85</strong></div>
+                    <div class="stat"><span>Rate</span><strong>85%</strong></div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <h3>Campus Food Fair • 03/22/2025</h3>
+                <p>A showcase of food vendors with special student discounts.</p>
+                <div class="event-stats">
+                    <div class="stat"><span>Views</span><strong>920</strong></div>
+                    <div class="stat"><span>RSVPs</span><strong>200</strong></div>
+                    <div class="stat"><span>Attendees</span><strong>160</strong></div>
+                    <div class="stat"><span>Rate</span><strong>80%</strong></div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <h3>Open Mic Night • 04/15/2025</h3>
+                <p>An evening of performances from local students.</p>
+                <div class="event-stats">
+                    <div class="stat"><span>Views</span><strong>1150</strong></div>
+                    <div class="stat"><span>RSVPs</span><strong>160</strong></div>
+                    <div class="stat"><span>Attendees</span><strong>90</strong></div>
+                    <div class="stat"><span>Rate</span><strong>56%</strong></div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </body>
+
 </html>

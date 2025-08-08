@@ -14,11 +14,12 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <h2>Creator Menu</h2>
-        <a href="#">Dashboard</a>
+        <a href="home-creator.html" class="active">Dashboard</a>
         <a href="create-event.html">Create Event</a>
-        <a href="#">My Events</a>
+        <a href="event-stats.html">Event Stats</a>
         <a href="../index.html">Logout</a>
     </div>
+
 
     <!-- Main content -->
     <div class="main">
@@ -50,6 +51,20 @@
             </div>
         </div>
     </div>
+
+    <!-- Publish confirmation modal -->
+    <div id="publishModal" class="cl-modal-overlay" aria-hidden="true">
+        <div class="cl-modal" role="dialog" aria-modal="true" aria-labelledby="pubTitle">
+            <h4 id="pubTitle" class="cl-modal-title">Publish event</h4>
+            <p class="cl-modal-text">Are you sure you want to publish this event?</p>
+            <div class="cl-modal-actions">
+                <button type="button" id="cancelPublishBtn" class="cl-btn cl-btn-secondary">Cancel</button>
+                <button type="button" id="confirmPublishBtn" class="cl-btn cl-btn-success">Publish</button>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

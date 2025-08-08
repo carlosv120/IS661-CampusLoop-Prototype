@@ -1,12 +1,11 @@
+/* Page layout */
 body {
     font-family: "Segoe UI", sans-serif;
-    background-color: #f9f9f9;
     margin: 0;
-    padding: 0;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     background: linear-gradient(to bottom left, #0047ab, #6ea8fe);
 }
 
@@ -14,84 +13,87 @@ body {
     width: 100%;
     max-width: 375px;
     padding: 24px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background: #fff;
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
     text-align: center;
 }
 
+/* Branding */
+.logo-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
 .logo-img {
-    width: 64px;
+    width: 150px;
     height: auto;
-    margin-bottom: 16px;
+    margin: -30px 0 -40px
 }
 
 h1 {
     color: #0047ab;
-    margin-bottom: 24px;
+    margin: 0 0 24px
 }
 
+/* Inputs */
 input[type="text"],
 input[type="password"] {
-    display: block;
-    margin: 0 auto 16px auto;
     width: 100%;
     padding: 12px;
+    margin: 0 0 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
     box-sizing: border-box;
 }
 
+/* Small text */
 .checkbox {
     margin-bottom: 16px;
     font-size: 14px;
-    text-align: left;
+    text-align: left
 }
 
-button {
+.test-note {
+    font-size: .85rem;
+    color: #6b6b6b;
+    margin: 12px 0
+}
+
+/* Generic buttons from common.css may set blue background.
+   We override ONLY the login button to be white. */
+#loginBtn {
     width: 100%;
-    background-color: #0047ab;
-    color: white;
     padding: 14px;
-    border: none;
     border-radius: 8px;
     font-size: 16px;
+    font-weight: 600;
+    background: #fff;
+    color: #0047ab;
+    border: 1px solid #d0d7de;
     cursor: pointer;
+    transition: background-color .2s ease, color .2s ease, box-shadow .2s ease;
 }
 
+#loginBtn:hover {
+    background: #f3f6ff;
+    color: #003a8c;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .06)
+}
+
+/* Bottom link */
 .signup {
     margin-top: 16px;
-    font-size: 14px;
+    font-size: 14px
 }
 
 .signup a {
     color: #0047ab;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .signup a:hover {
-    text-decoration: underline;
-}
-
-.logo-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo-img {
-    width: 150px;
-    height: auto;
-    margin-top: -30px;
-    margin-bottom: -40px;
-}
-
-/* ...existing login.css rules remain unchanged... */
-
-/* light grey sub-note for test accounts */
-.test-note {
-    font-size: 0.85rem;
-    color: #6b6b6b;
-    margin: 12px 0;
+    text-decoration: underline
 }
