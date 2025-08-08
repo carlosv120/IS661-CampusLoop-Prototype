@@ -1,0 +1,99 @@
+/*  Body  */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #e6f0ff, #ffffff);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #0047ab;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin: 0 0 24px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.sidebar a {
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sidebar a.active {
+    background-color: rgba(255, 255, 255, 0.22);
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Container */
+.container {
+    margin-left: 240px;
+    padding: 32px;
+    background: linear-gradient(to bottom right, #e6f0ff, #ffffff);
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.title {
+    font-size: 28px;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+/* Metrics Section */
+.metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: calc(33.333% - 24px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 24px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 18px;
+    color: #0047ab;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 8px;
+}
