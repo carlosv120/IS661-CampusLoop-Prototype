@@ -3,7 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
     var list = document.getElementById("creatorEventsList");
     if (!list) return;
 
-    var events = [
+    // Read locally saved events from the Create Event page
+    var STORAGE_KEY = "cl_events";
+    function getSavedEvents() {
+        try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            return raw ? JSON.parse(raw) : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    // Seed events for visual purposes
+    var seedEvents = [
         {
             title: "Campus Club Fair",
             startDate: "10/03/2025",
@@ -76,30 +88,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
+    // Saved events first, then seeds
+    var saved = getSavedEvents();
+    var events = saved.length ? saved.concat(seedEvents) : seedEvents;
+
     function renderEventCard(e) {
-        var dateText = e.startDate === e.endDate ? e.startDate : e.startDate + " to " + e.endDate;
+        var start = e.startDate || "";
+        var end = e.endDate || start;
+        var dateText = start === end ? start : start + " to " + end;
         var tagsText = e.tags && e.tags.length ? e.tags.join(", ") : "None";
 
         var imgBlock = e.image
             ? '<img class="event-img" src="' + e.image + '" alt="' + (e.imageAlt || e.title) + '" style="width:120px;height:auto;border-radius:8px;">'
             : '<div class="event-img" aria-label="Event image description" style="width:120px;min-height:80px;border-radius:8px;background:#f3f6ff;display:flex;align-items:center;justify-content:center;padding:8px;text-align:center;">'
-            + '<small>' + e.imageAlt + '</small>'
+            + '<small>' + (e.imageAlt || "Event image") + '</small>'
             + '</div>';
 
         return (
             '<div class="card" style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;">' +
             imgBlock +
             '<div class="event-body" style="flex:1;">' +
-            '<h4 style="margin:0 0 8px 0;color:#0047ab;">' + e.title + '</h4>' +
-            '<p style="margin:0 0 12px 0;">' + e.description + '</p>' +
+            '<h4 style="margin:0 0 8px 0;color:#0047ab;">' + (e.title || "Untitled event") + '</h4>' +
+            '<p style="margin:0 0 12px 0;">' + (e.description || "") + '</p>' +
             '<div class="event-fields" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;">' +
             '<div><strong>Date</strong> ' + dateText + '</div>' +
-            '<div><strong>Venue</strong> ' + e.venue + '</div>' +
-            '<div><strong>Visibility</strong> ' + e.visibility + '</div>' +
+            '<div><strong>Venue</strong> ' + (e.venue || "") + '</div>' +
+            '<div><strong>Visibility</strong> ' + (e.visibility || "") + '</div>' +
             '<div><strong>Tags</strong> ' + tagsText + '</div>' +
-            '<div><strong>Category</strong> ' + e.category + '</div>' +
-            '<div><strong>Capacity or Attendance</strong> ' + e.capacity + '</div>' +
-            '<div><strong>Cost</strong> ' + e.cost + '</div>' +
+            '<div><strong>Category</strong> ' + (e.category || "") + '</div>' +
+            '<div><strong>Capacity or Attendance</strong> ' + (e.capacity || "") + '</div>' +
+            '<div><strong>Cost</strong> ' + (e.cost || "") + '</div>' +
             '</div>' +
             '</div>' +
             '</div>'
